@@ -11,20 +11,19 @@ return new class extends Migration
      */
    public function up(): void
 {
-    Schema::create('categories', function (Blueprint $table) {
+    Schema::create('sneakers', function (Blueprint $table) {
         $table->id();
         $table->string('name');
-        $table->string('description')->nullable();
-        $table ->string('country');
+        $table->string('colorway');
+        $table->unsignedSmallInteger('release_year');
+        $table->text('description')->nullable();
+        $table->foreignId('brand_id')->constrained();
         $table->timestamps();
     });
 }
 
-    /**
-     * Reverse the migrations.
-     */
-    public function down(): void
-    {
-        Schema::dropIfExists('categories_brand');
-    }
+public function down(): void
+{
+    Schema::dropIfExists('sneakers');
+}
 };
