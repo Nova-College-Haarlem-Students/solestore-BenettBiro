@@ -12,4 +12,10 @@ class BrandController extends Controller
 
         return view('categories.index', compact('brands'));
     }
+    public function show($id)
+    {
+        $brands = Brand::findOrFail($id);
+        return view('brands.show', compact('brands'));
+    }
+    
 }

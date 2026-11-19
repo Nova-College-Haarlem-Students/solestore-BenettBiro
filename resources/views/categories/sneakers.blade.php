@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <h1>Brands overview</h1>
+    <h1>sneakers overview </h1>
 
     @if($sneakers->isEmpty())
         <p>No Brands found.</p>

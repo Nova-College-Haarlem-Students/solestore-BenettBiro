@@ -17,7 +17,7 @@ return new class extends Migration
         $table->string('colorway');
         $table->unsignedSmallInteger('release_year');
         $table->text('description')->nullable();
-        $table->foreignId('brand_id')->constrained();
+        $table->foreignId('brand_id')->constrained()->cascadeOnDelete();
         $table->timestamps();
     });
 }

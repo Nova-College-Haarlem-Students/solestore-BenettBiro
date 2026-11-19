@@ -12,5 +12,11 @@ class sneakerController extends Controller
     $sneakers = Sneaker::all();
     return view('categories.sneakers', compact('sneakers'));
 }
- 
+   public function show($id)
+    {
+        $sneakers = Sneaker::findOrFail($id);
+        return view('categories.show', compact('sneakers'));
+    }
+    
 }
+

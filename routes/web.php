@@ -18,4 +18,6 @@ Route::get('/contact', function () {
 });
 
 Route::get('/brands', [BrandController::class, 'index']);
+Route::get('/brands/{id}', [BrandController::class, 'show']);
 Route::get('/sneakers', [sneakerController::class, 'sneakers']);
+Route::get('/sneakers/{id}', [sneakerController::class, 'show']);

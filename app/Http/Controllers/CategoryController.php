@@ -1,21 +1,20 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Http\Request;
-use App\Models\Category;
 
+use App\Models\Sneaker;
 
-class CategoryController extends Controller
+class SneakerController extends Controller
 {
-  public function sneakers()
-{
-    $sneakers = Category::all();
-    return view('categories.sneakers', compact('sneakers'));
-}
-  public function index()
-{
-    // Lijst alle categorieën ophalen
-    $categories = Category::all();
-    return view('categories.index', compact('categories'));
-}
+    public function index()
+    {
+        $sneakers = Sneaker::all();
+        return view('categories.index', compact('sneakers'));
+    }
+
+    public function show($id)
+    {
+        $sneaker = Sneaker::findOrFail($id);
+        return view('categories.show', compact('sneaker'));
+    }
 }
